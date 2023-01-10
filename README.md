@@ -4,8 +4,11 @@ Rafid Ahmed - RafidAhmed05
 ## Roles
 
 Software Development Manager - 
+
 QA Engineer - 
+
 Product Manager - 
+
 Project Manager - 
 
 ## Digital Portfolio Links
