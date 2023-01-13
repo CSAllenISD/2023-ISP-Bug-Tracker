@@ -14,9 +14,11 @@ Software Development Manager -
 
 QA Engineer - 
 
-Product Manager -
+Product Manager - Brook Asnake
 
 Project Manager - 
+
+Release Manager - Brook Asnake
 
 ## Digital Portfolio Links
 
