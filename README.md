@@ -10,7 +10,7 @@ Brook Asnake - Brook-A-CS
 
 ## Roles
 
-Software Development Manager - Rafid Ahmed, Brook Asnake, Aidan Valva
+Software Development Engineer - Rafid Ahmed, Brook Asnake, Aidan Valva
 
 QA Engineer - Aidan Valva
 
