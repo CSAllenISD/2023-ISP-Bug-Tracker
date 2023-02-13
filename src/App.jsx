@@ -1,24 +1,25 @@
 import React, { useState } from "react";
-import AddIssue from './components/AddIssue/AddIssue.js'
-import CurrentIssue from './components/CurrentIssue/CurrentIssue.js'
+import AddIssue from './components/AddIssue/AddIssue.jsx'
+import CurrentIssue from './components/CurrentIssue/CurrentIssue.jsx'
 import './App.css';
 
 function App() {
-  const [addIssue, setAddIssue] = useState(true);
+  const [addIssue, setAddIssue] = useState();
+  const [issue, setIssue] = useState();
 
   function showAddIssue() {
-    setAddIssue(true);
+    setAddIssue(false);
   }
 
   function showCurrentIssue() {
-    setAddIssue(false);
+    setAddIssue(true);
   }
 
   return (
     <div className="App">
       <h1>Issue Tracker</h1>
       <div className="grey-card-container">
-        {addIssue ? <AddIssue /> : <CurrentIssue />}
+        {addIssue ? <CurrentIssue /> : <AddIssue />}
       </div>
       <div className="view-selection-div">
         <button className="view-button" onClick={() => showCurrentIssue()}>Current Issues</button>
