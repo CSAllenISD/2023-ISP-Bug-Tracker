@@ -5,7 +5,6 @@ import './App.css';
 
 function App() {
   const [addIssue, setAddIssue] = useState();
-  const [issue, setIssue] = useState();
 
   function showAddIssue() {
     setAddIssue(false);

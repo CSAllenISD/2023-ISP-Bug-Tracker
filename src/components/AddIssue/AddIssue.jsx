@@ -1,11 +1,28 @@
-import React from "react";
+// import React, { useState, useRef, useEffect} from "react";
+import React, { useState, useRef} from "react";
+//import IssueList from "../IssueList/IssueList";
 import "./AddIssue.css"
+
+// const LOCAL_STORAGE_KEY = 'issue.issues'
+
 function AddIssue() {
+
+    const [setIssues] = useState([]);  
+    const issueNameRef = useRef()
+
+    function handleAddIssue(e) {
+        const name = issueNameRef.current.value
+        if (name === '') return 
+        setIssues(prevIssues => {
+            return [...prevIssues, {id: '1', name: name}]
+        })
+        issueNameRef.current.value = null
+    }
 
   return (
     <div className="add-issue">
         <form>
-            <label>Description<input type="text" placeholder="Description of the Issue..."/></label>
+            <label>Description<input ref={issueNameRef} type="text" placeholder="Description of the Issue..."/></label>
             <label>Assign To
                 <select name="forDev" id="forDev">
                     <option value="John">John</option>
@@ -22,7 +39,7 @@ function AddIssue() {
                     <option value="Extra-High">Extra-High</option>
                 </select>
             </label>
-              <button type="submit">Add</button>
+              <button type="submit" onClick={handleAddIssue}>Add</button>
         </form> 
     </div>
   );
