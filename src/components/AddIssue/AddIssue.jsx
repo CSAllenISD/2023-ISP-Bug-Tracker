@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 //import React from "react";
 //import IssueList from "../IssueList/IssueList";
 import "./AddIssue.css"
@@ -6,13 +6,11 @@ import "./AddIssue.css"
 function AddIssuePage({issues, setIssues}) {
 
     const issueNameRef = useRef()
-    const LOCAL_STORAGE_KEY = 'issues.storage'
-
-    useEffect(() => {
-        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(issues))
-    }, [issues])
 
     function handleAddTodo(e) {
+        //idk if this is good code
+        e.preventDefault();
+
         const name = issueNameRef.current.value
         if (name === '') return 
         console.log(name)
@@ -21,6 +19,7 @@ function AddIssuePage({issues, setIssues}) {
             return [...prevIssues, {id: 1, name: name}]
         })
         issueNameRef.current.value = null
+
     }
 
   return (

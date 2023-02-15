@@ -6,8 +6,8 @@ import './App.css';
 function App() {
   const [addIssue, setAddIssue] = useState();
 
-  const [issues, setIssues] = useState([{id: 1, name:"test string"}]);
-
+  // const [issues, setIssues] = useState([{id: 1, name:"test string"}]);
+  const [issues, setIssues] = useState([{}]);
   function showAddIssue() {
     setAddIssue(false);
   }
