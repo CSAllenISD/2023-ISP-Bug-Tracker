@@ -3,7 +3,7 @@ import React from 'react'
 export default function Issue({issue}) {
   return (
     // <div>
-    //     {issue}
+      //{issue}
     // </div>
     <div className="indv-issue">
       <p className="close-issue">Close Issue</p>

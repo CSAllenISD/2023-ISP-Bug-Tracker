@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "./CurrentIssue.css"
 import IssueList from '../IssueList/IssueList.jsx'
 
-function CurrentIssue() {
-
-  const [issues] = useState([]);
+function CurrentIssue({issues}) {
 
   return (
     <div className="current-issues">
@@ -16,10 +14,8 @@ function CurrentIssue() {
         <p className="description-text">Short Description of the Project describing the issue</p>
         <hr/>
 
-
-
-
       </div>
+      {/* type issue G160 mr willis thx */}
       <IssueList issues={issues} />
     </div>
   );

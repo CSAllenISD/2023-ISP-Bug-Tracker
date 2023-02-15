@@ -1,20 +1,24 @@
-// import React, { useState, useRef, useEffect} from "react";
-import React, { useState, useRef} from "react";
+import React, { useRef, useEffect } from "react";
+//import React from "react";
 //import IssueList from "../IssueList/IssueList";
 import "./AddIssue.css"
 
-// const LOCAL_STORAGE_KEY = 'issue.issues'
+function AddIssuePage({issues, setIssues}) {
 
-function AddIssue() {
-
-    const [setIssues] = useState([]);  
     const issueNameRef = useRef()
+    const LOCAL_STORAGE_KEY = 'issues.storage'
 
-    function handleAddIssue(e) {
+    useEffect(() => {
+        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(issues))
+    }, [issues])
+
+    function handleAddTodo(e) {
         const name = issueNameRef.current.value
         if (name === '') return 
+        console.log(name)
         setIssues(prevIssues => {
-            return [...prevIssues, {id: '1', name: name}]
+            //hardcoded id
+            return [...prevIssues, {id: 1, name: name}]
         })
         issueNameRef.current.value = null
     }
@@ -24,7 +28,7 @@ function AddIssue() {
         <form>
             <label>Description<input ref={issueNameRef} type="text" placeholder="Description of the Issue..."/></label>
             <label>Assign To
-                <select name="forDev" id="forDev">
+                <select name="forDev" id="forDev"> 
                     <option value="John">John</option>
                     <option value="Morten">Morten</option>
                     <option value="Sara">Sara</option>
@@ -39,10 +43,10 @@ function AddIssue() {
                     <option value="Extra-High">Extra-High</option>
                 </select>
             </label>
-              <button type="submit" onClick={handleAddIssue}>Add</button>
+              <button onClick={handleAddTodo} type="submit">Add</button>
         </form> 
     </div>
   );
 }
 
-export default AddIssue;
+export default AddIssuePage;
