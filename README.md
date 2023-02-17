@@ -30,4 +30,6 @@ Brook Asnake - https://www.codermerlin.com/users/brook-asnake/Digital%20Portfoli
 
 ## Advertisement
 
-[Bug-Tracker.png](Bug-Tracker.png)
+![Bug-Tracker](https://user-images.githubusercontent.com/70545345/219811792-9039138b-5222-411d-ae9a-4b494d2c41a7.png)
+
+
