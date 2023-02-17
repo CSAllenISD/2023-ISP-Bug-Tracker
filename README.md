@@ -28,4 +28,6 @@ Aidan Valva - https://www.codermerlin.com/users/aidan-valva/Digital%20Portfolio/
 
 Brook Asnake - https://www.codermerlin.com/users/brook-asnake/Digital%20Portfolio/index.html
 
-[Bug-Tracker.pdf](https://github.com/CSAllenISD/2023-ISP-Bug-Tracker/files/10772075/Bug-Tracker.pdf)
+## Advertisement
+
+[Bug-Tracker.png](Bug-Tracker.png)
