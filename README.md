@@ -27,3 +27,5 @@ Rafid Ahmed - https://www.codermerlin.com/users/rafid-ahmed/Digital%20Portfolio/
 Aidan Valva - https://www.codermerlin.com/users/aidan-valva/Digital%20Portfolio/index.html
 
 Brook Asnake - https://www.codermerlin.com/users/brook-asnake/Digital%20Portfolio/index.html
+
+[Bug-Tracker.pdf](https://github.com/CSAllenISD/2023-ISP-Bug-Tracker/files/10772075/Bug-Tracker.pdf)
