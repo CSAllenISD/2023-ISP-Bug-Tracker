@@ -11,9 +11,8 @@ function AddIssuePage({issues, setIssues}) {
 
     const [assignees, setAssign ] = useState([{name: "John", id: 1 }, {name: "Sara", id: 2}])
 
-    // change to arr[0]
     var priority = 'low';
-    var assign = 'John'; 
+    var assign = assignees[0].name; 
 
     function updatePriority(e) {  priority = priorityRef.current.value }
 
@@ -72,10 +71,10 @@ function AddIssuePage({issues, setIssues}) {
                     <option value="Extra-High">Extra-High</option>
                 </select>
             </label>
-            <label>Date
+            {/* <label>Date
                 <select name="Date" id="Date">
                 </select>
-            </label>
+            </label> */}
               <button onClick={handleAddTodo} type="submit">Add</button>
         </form> 
     </div>
