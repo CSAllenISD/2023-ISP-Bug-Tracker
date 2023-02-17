@@ -8,10 +8,18 @@ form label, label input, label select {
 }
 
 label input, label select {
-    width: 100%;
     padding: 15px;
     margin-top: 10px;
     border: rgba(112,112,112,.25)
+}
+
+/* keeps both the same length */
+label, label select {
+    width: 100%;
+}
+
+input {
+    width: 96%;
 }
 
 form label {
