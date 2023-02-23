@@ -5,6 +5,7 @@ import './App.css';
 import Home from "./components/Home/Home";
 import About from "./components/Home/About";
 import Work from "./components/Home/Work";
+import Navbar from "./components/Home/Navbar.jsx";
 
 // function App() {
 //   const [addIssue, setAddIssue] = useState(true);
