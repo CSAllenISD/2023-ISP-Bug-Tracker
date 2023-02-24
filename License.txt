@@ -1,4 +1,4 @@
-Copyright (C) 2023 Rafid-Ahmed, Brook Asnake, Aidan-Valva
+Copyright (C) 2023 Rafid-Ahmed, Brook-Asnake, Aidan-Valva
 This program was developed using codermerlin.academy resources.
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
