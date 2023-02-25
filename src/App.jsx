@@ -17,13 +17,13 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Event Tracker</h1>
+      <h1>Issue Tracker</h1>
       <div className="grey-card-container">
         {addIssue ? <CurrentIssue issues={issues} setIssues={setIssues}/> : <AddIssuePage issues={issues} setIssues={setIssues} />}
       </div>
       <div className="view-selection-div">
-        <button className="view-button" onClick={() => showCurrentIssue()}>Current Events</button>
-        <button className="view-button active-button" onClick={() => showAddIssue()}>Add Events</button>
+        <button className="view-button" onClick={() => showCurrentIssue()}>Current Issues</button>
+        <button className="view-button active-button" onClick={() => showAddIssue()}>Add Issues</button>
       </div>
     </div>
   );
