@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 import AssignList from "./AssignList";
 import "./AddIssue.css"
 
+const { uuid, default: uuid4 } = require('uuid4');
+
 function AddIssuePage({issues, setIssues}) {
 
     const issueNameRef = useRef()
@@ -9,10 +11,12 @@ function AddIssuePage({issues, setIssues}) {
     const assignRef = useRef()
     const newAssignRef = useRef()
 
+    //john and sara are for testing, remove in final build
     const [assignees, setAssign ] = useState([{name: "John", id: 1 }, {name: "Sara", id: 2}])
 
     var priority = 'low';
     var assign = assignees[0].name; 
+
 
     function updatePriority(e) {  priority = priorityRef.current.value }
 
@@ -29,7 +33,7 @@ function AddIssuePage({issues, setIssues}) {
         setIssues(prevIssues => {
             // TODO: hardcoded id
             // console.log(...prevIssues, {id: 1, name: name, priority: priority, assign: assign } )
-            return [...prevIssues, {id: 1, name: name, priority: priority, assign: assign }]
+            return [...prevIssues, {id: uuid4(), name: name, priority: priority, assign: assign }]
         })
         issueNameRef.current.value = null
 
@@ -39,12 +43,12 @@ function AddIssuePage({issues, setIssues}) {
         e.preventDefault()
 
         const name = newAssignRef.current.value
-
+        
         if (name === '') return
-        setAssign(prevAssign => {
+        setAssign((prevAssign, assineeCount) => {
             // TODO: hardcoded id idk if it even needs id 
             // console.log(...prevAssign, {id: 2, name: name})
-            return[...prevAssign, {id: 3, name: name}]
+            return[...prevAssign, {id: 2, name: name}]
         })
 
         newAssignRef.current.value = null
