@@ -4,7 +4,7 @@ import "./AddIssue.css"
 
 const { uuid4 } = require('uuid4');
 
-function AddIssuePage({issues, setIssues}) {
+function AddIssuePage({setIssues}) {
 
     const issueNameRef = useRef()
     const priorityRef = useRef()

@@ -19,7 +19,7 @@ function App() {
     <div className="App">
       <h1>Issue Tracker</h1>
       <div className="grey-card-container">
-        {addIssue ? <CurrentIssue issues={issues} setIssues={setIssues}/> : <AddIssuePage issues={issues} setIssues={setIssues} />}
+        {addIssue ? <CurrentIssue issues={issues} /> : <AddIssuePage setIssues={setIssues} />}
       </div>
       <div className="view-selection-div">
         <button className="view-button" onClick={() => showCurrentIssue()}>Current Issues</button>
