@@ -1,0 +1,54 @@
+.App {
+    text-align: center;
+}
+
+body {
+    background: #eef4fb
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-size: 65px;
+    color: #007AE6;
+}
+
+.grey-card-container {
+    max-width: 725px;
+    min-height: 504.54px;
+    margin: auto;
+    background: #F6F6F6;
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+    border-radius: 5px;
+    padding: 40px 50px 30px;
+}
+
+.view-button {
+    border-radius: 5px;
+    background: #fff;
+    color: #007ae6;
+    border: none;
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+    padding: 15px 30px;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.active-button {
+    background: #fff;
+    color: #007ae6
+}
+
+.view-selection-div {
+    display: flex;
+    justify-content: space-between;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 30px;
+}
