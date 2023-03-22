@@ -2,11 +2,13 @@ import React from "react";
 import BannerBackground from "../../Assets/about-background.png";
 import BannerImage from "../../Assets/addisue.png";
 import Navbar from "./Navbar";
+import About from "./About";
+import Work from "./Work";
 
 const Home = () => {
     return (
+      
       <div className="home-container">
-        <Navbar />
         <div className="home-banner-container">
           <div className="home-bannerImage-container">
             <img src={BannerBackground} alt="" />
@@ -23,6 +25,8 @@ const Home = () => {
             <img src={BannerImage} alt="" />
           </div>
         </div>
+        <About />
+        <Work />
       </div>
     );
   };
