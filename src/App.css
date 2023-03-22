@@ -1,4 +1,4 @@
-/* .App {
+.App {
     text-align: center;
 }
 
@@ -50,7 +50,7 @@ h1 {
     max-width: 500px;
     margin: auto;
     margin-top: 30px;
-} */
+}
 
 * {
   margin: 0;
@@ -74,7 +74,7 @@ body {
 }
 
 body {
-  background-color: #f6f6f6;
+  background-color: #e2e8f0;
 }
 
 nav {

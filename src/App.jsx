@@ -6,6 +6,7 @@ import Home from "./components/Home/Home";
 import About from "./components/Home/About";
 import Work from "./components/Home/Work";
 import Navbar from "./components/Home/Navbar.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // function App() {
 //   const [addIssue, setAddIssue] = useState(true);
@@ -34,11 +35,20 @@ import Navbar from "./components/Home/Navbar.jsx";
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-      <About />
-      <Work />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Navbar />}>
+        <Route path="/" index element={<Home />}/>
+        <Route path="AddIssue" element={<AddIssue />}/>
+        <Route path="CurrentIssue" element={<CurrentIssue />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+    // <div className="App">
+    //   <Home />
+    //   <About />
+    //   <Work />
+    // </div>
   );
 }
 
