@@ -3,6 +3,7 @@ import "./CurrentIssue.css"
 
 function CurrentIssue() {
   return (
+    <div className="grey-card-container">
     <div className="current-issues">
       <div className="indv-issue">
       <p className="close-issue">Close Issue</p>
@@ -28,6 +29,7 @@ function CurrentIssue() {
       <p className="description-text">Short Description of the Project describing the issue</p>
       <hr />
       </div>
+    </div>
     </div>
   );
 }
