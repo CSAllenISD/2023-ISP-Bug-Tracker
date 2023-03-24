@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import AddIssue from './components/AddIssue/AddIssue.js'
-import CurrentIssue from './components/CurrentIssue/CurrentIssue.js'
+import AddIssue from './components/AddIssue/AddIssue.jsx'
+import CurrentIssue from './components/CurrentIssue/CurrentIssue.jsx'
 import './App.css';
 import Home from "./components/Home/Home";
 import About from "./components/Home/About";
