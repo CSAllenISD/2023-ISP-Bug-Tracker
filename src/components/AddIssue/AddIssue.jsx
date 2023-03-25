@@ -3,6 +3,7 @@ import "./AddIssue.css"
 function AddIssue() {
 
   return (
+    <div className="grey-card-container">
     <div className="add-issue">
         <form>
             <label>Description<input type="text" placeholder="Description of the Issue..."/></label>
@@ -24,6 +25,7 @@ function AddIssue() {
             </label>
               <button type="submit">Add</button>
         </form> 
+    </div>
     </div>
   );
 }
