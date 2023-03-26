@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import AssignList from "./AssignList";
 import "./AddIssue.css"
 
@@ -14,9 +14,26 @@ function AddIssuePage({setIssues}) {
     //john and sara are for testing, remove in final build
     const [assignees, setAssign ] = useState([{name: "John", id: 1 }, {name: "Sara", id: 2}])
 
+    const [backendData, setBackendData] = useState([{}])
+
+    useEffect(() => {
+        fetch("/api").then(
+            response => response.json()
+        ).then(
+            data => {
+                setBackendData(data)
+            }
+        )
+    }, [])
+    
+    {(typeof backendData.assignees === 'undefined') ? (
+        <p>Loading...</p>
+    ): (
+        console.log(backendData.assignees[0].name)
+    )}
+
     var priority = 'low';
     var assign = assignees[0].name; 
-
 
     function updatePriority(e) {  priority = priorityRef.current.value }
 
@@ -59,7 +76,12 @@ function AddIssuePage({setIssues}) {
             <label>Description<input ref={issueNameRef} type="text" placeholder="Description of the Issue..."/></label>
             <label>Assign To
                 <select name="forDev" id="forDev" ref={assignRef} onChange={updateAssign}> 
-                    <AssignList assignees={assignees} />
+                    {(typeof backendData.assignees === 'undefined') ? (
+                        <p>Loading...</p>
+                    ): (
+                        <AssignList assignees={backendData.assignees} />
+                    )}
+                    {/* <AssignList assignees={assignees} /> */}
                 </select>
                     <input type="text" name="" id="new-person" ref={newAssignRef} placeholder="New assignee name"/>
                     <button value="Add" className="add" onClick={handleAddAssignee}>+ New Person</button>
