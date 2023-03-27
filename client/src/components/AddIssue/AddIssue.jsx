@@ -24,17 +24,18 @@ function AddIssuePage({setIssues}) {
                 setBackendData(data)
             }
         )
-    }, [])
+    }, []) //TODO check docs for what empty arr does
+    
+    
+    var priority = 'low';
+    var assign = assignees[0].name; 
     
     {(typeof backendData.assignees === 'undefined') ? (
         <p>Loading...</p>
     ): (
         console.log(backendData.assignees[0].name)
     )}
-
-    var priority = 'low';
-    var assign = assignees[0].name; 
-
+    
     function updatePriority(e) {  priority = priorityRef.current.value }
 
     function updateAssign(e) {  assign = assignRef.current.value  }
@@ -77,11 +78,11 @@ function AddIssuePage({setIssues}) {
             <label>Assign To
                 <select name="forDev" id="forDev" ref={assignRef} onChange={updateAssign}> 
                     {(typeof backendData.assignees === 'undefined') ? (
-                        <p>Loading...</p>
+                        <AssignList assignees={[{name: "Loading...", id: null }]} />
+
                     ): (
                         <AssignList assignees={backendData.assignees} />
                     )}
-                    {/* <AssignList assignees={assignees} /> */}
                 </select>
                     <input type="text" name="" id="new-person" ref={newAssignRef} placeholder="New assignee name"/>
                     <button value="Add" className="add" onClick={handleAddAssignee}>+ New Person</button>
