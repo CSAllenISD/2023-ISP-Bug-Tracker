@@ -8,10 +8,18 @@ form label, label input, label select {
 }
 
 label input, label select {
-    width: 100%;
     padding: 15px;
     margin-top: 10px;
     border: rgba(112,112,112,.25)
+}
+
+/* keeps both the same length */
+label, label select {
+    width: 100%;
+}
+
+input {
+    width: 96%;
 }
 
 form label {
@@ -28,6 +36,10 @@ form button {
     box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
     padding: 15px 30px;
     font-size: 16px;
-    margin-top: 15px;
+    margin-top: 25px;
 }
 
+.add {
+    background-color: rgb(34, 122, 46);
+    color: whitesmoke
+}
