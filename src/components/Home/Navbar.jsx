@@ -20,16 +20,7 @@ const Navbar = () => {
       </nav>
       <Outlet />
     </>
-    // <nav>
-    //     <div className="nav-logo-container">
-    //       <img src={Logo} alt="" />
-    //     </div>
-    //     <div className="navbar-links-container">
-    //       <a href="">Home</a>
-    //       <a href="">About Us</a>
-    //       <a href="">Contact Us</a>
-    //     </div>
-    //   </nav>
+
     );
 };
 
