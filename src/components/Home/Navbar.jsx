@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import Logo from "../../Assets/Logo.png";
+import React from "react";
 import { Outlet, Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -15,6 +14,9 @@ const Navbar = () => {
           </li>
           <li>
             <Link to="/CurrentIssue">CurrentIssues</Link>
+          </li>
+          <li>
+            <Link to="/Calendar">Calendar</Link>
           </li>
         </ul>
       </nav>

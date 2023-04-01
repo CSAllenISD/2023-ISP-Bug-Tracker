@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import AddIssue from './components/AddIssue/AddIssue.jsx'
 import CurrentIssue from './components/CurrentIssue/CurrentIssue.jsx'
 import './App.css';
 import Home from "./components/Home/Home";
-import About from "./components/Home/About";
-import Work from "./components/Home/Work";
 import Navbar from "./components/Home/Navbar.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Calendar from "./components/Calendar/Calendar.jsx"
 
 function App() {
   return (
@@ -16,6 +15,7 @@ function App() {
         <Route path="/" index element={<Home />}/>
         <Route path="AddIssue" element={<AddIssue />}/>
         <Route path="CurrentIssue" element={<CurrentIssue />} />
+        <Route path="Calendar" element={<Calendar /> } />
         </Route>
       </Routes>
     </BrowserRouter>
