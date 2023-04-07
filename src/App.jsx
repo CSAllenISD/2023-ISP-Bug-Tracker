@@ -1,27 +1,25 @@
 import React, { useState } from "react";
-import Logo from "../../Assets/Logo.png";
-import { Outlet, Link } from "react-router-dom";
+import AddIssue from './components/AddIssue/AddIssue.jsx'
+import CurrentIssue from './components/CurrentIssue/CurrentIssue.jsx'
+import './App.css';
+import Home from "./components/Home/Home";
+import About from "./components/Home/About";
+import Work from "./components/Home/Work";
+import Navbar from "./components/Home/Navbar.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-const Navbar = () => {
-    return (
-    <>
-      <nav>
-        <ul className="navbar-links-container">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/AddIssue">AddIssue</Link>
-          </li>
-          <li>
-            <Link to="/CurrentIssue">CurrentIssues</Link>
-          </li>
-        </ul>
-        <div class="dot"></div>
-      </nav>
-      <Outlet />
-    </>
-    );
-};
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Navbar />}>
+        <Route path="/" index element={<Home />}/>
+        <Route path="AddIssue" element={<AddIssue />}/>
+        <Route path="CurrentIssue" element={<CurrentIssue />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
 
-export default Navbar;
+export default App;
