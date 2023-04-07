@@ -1,22 +1,22 @@
 import React from "react";
-import Pick from "../../Assets/Sky.png";
+import Add from "../../Assets/Add.png";
 import Choose from "../../Assets/Sky.png";
-import Delivery from "../../Assets/Sky.png";
+import Calendar from "../../Assets/Calendar.png";
 
 const Work = () => {
   const workInfoData = [
+    // {
+    //   image: Choose,
+    //   title: "Choose What you Want",
+    //   text: "Lorem ipsum dolor sit amet consectetur. Maecenas orci et sagittis duis elementum interdum facilisi bibendum.",
+    // },
     {
-      image: Pick,
-      title: "Choose What you Want",
-      text: "Lorem ipsum dolor sit amet consectetur. Maecenas orci et sagittis duis elementum interdum facilisi bibendum.",
-    },
-    {
-      image: Choose,
+      image: Add,
       title: "Add Them",
       text: "Lorem ipsum dolor sit amet consectetur. Maecenas orci et ",
     },
     {
-      image: Delivery,
+      image: Calendar,
       title: "See your Schedule",
       text: "Lorem ipsum dolor sit amet consectetur. Maecenas orci et lorem ipsum",
     },

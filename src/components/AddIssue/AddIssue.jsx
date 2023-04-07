@@ -3,6 +3,8 @@ import "./AddIssue.css"
 function AddIssue() {
 
   return (
+    <div className="App">
+    <h1>Issue Tracker</h1>
     <div className="grey-card-container">
     <div className="add-issue">
         <form>
@@ -25,6 +27,7 @@ function AddIssue() {
             </label>
               <button type="submit">Add</button>
         </form> 
+    </div>
     </div>
     </div>
   );
