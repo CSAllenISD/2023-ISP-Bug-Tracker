@@ -5,7 +5,8 @@ const Assignee = require("../models/assignees")
 //GET all
 router.get('/', async (req, res) => {
    try{
-    const asignees = await Assignee.find()
+    const assignees = await Assignee.find()
+    res.json(assignees)
    } catch (err) {
     res.status(500).json({message: err.message})
    }
