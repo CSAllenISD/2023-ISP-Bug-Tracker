@@ -28,6 +28,10 @@ Aidan Valva - https://www.codermerlin.com/users/aidan-valva/Digital%20Portfolio/
 
 Brook Asnake - https://www.codermerlin.com/users/brook-asnake/Digital%20Portfolio/index.html
 
+## Gantt Chart
+
+Link: https://docs.google.com/spreadsheets/d/1cvaCJ1v1KQsb4dFzjlJqO6XGIJ8MkNUVDH8Womn-AFk/edit#gid=1688732048
+
 ## Advertisement
 
 ![Bug-Tracker](https://user-images.githubusercontent.com/70545345/219811792-9039138b-5222-411d-ae9a-4b494d2c41a7.png)
