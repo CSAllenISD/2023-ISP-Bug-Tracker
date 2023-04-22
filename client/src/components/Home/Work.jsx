@@ -1,6 +1,5 @@
 import React from "react";
 import Add from "../../Assets/Add.png";
-import Choose from "../../Assets/Sky.png";
 import Calendar from "../../Assets/Calendar.png";
 
 const Work = () => {
@@ -13,12 +12,12 @@ const Work = () => {
     {
       image: Add,
       title: "Add Them",
-      text: "Lorem ipsum dolor sit amet consectetur. Maecenas orci et ",
+      text: "Add the important work issues you have to add",
     },
     {
       image: Calendar,
       title: "See your Schedule",
-      text: "Lorem ipsum dolor sit amet consectetur. Maecenas orci et lorem ipsum",
+      text: "Personalize your own calender to the events you need",
     },
   ];
   return (
@@ -27,8 +26,7 @@ const Work = () => {
         <p className="primary-subheading">Work</p>
         <h1 className="primary-heading">How It Works</h1>
         <p className="primary-text">
-          Lorem ipsum dolor sit amet consectetur. Non tincidunt magna non et
-          elit. Dolor turpis molestie dui magnis facilisis at fringilla quam.
+          Here are some picture of our application and what you can expect it to do.
         </p>
       </div>
       <div className="work-section-bottom">

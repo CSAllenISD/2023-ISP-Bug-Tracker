@@ -1,42 +1,33 @@
-form {
-    text-align: left;
-}
-form label, label input, label select {
-    display: block;
-    color: #707070;
+.Calendar {
+	text-align: center;
 }
 
-label input, label select {
-    display: block;
-    width: 100%;
+.inputBox input {
+    width: 250px;
     padding: 10px;
     border: 2px solid rgba(255,255,255,0.25);
     border-radius: 4px;
     margin: 3px 0;
+    background: #eef4fb;
     border-radius: 5px;
     outline: none;
     color: black;
     font-size: 1em;
     transition: .3s;
-    text-align: left;
 }
 
-.label input, label select:focus {
+.inputBox input:focus {
     border-color: dodgerblue;
     box-shadow: 0 0 8px 0 dodgerblue;
 }
 
-form label {
-    margin-top: 20px;
-}
-
-.addbtn {
+.btn {
     border: none;
-    margin-top: 15px;
+    margin-top: 10px;
     font-size: 16px;
     background: #007AE6;
-    width: 70px;
-    padding: 10px;
+    width: 130px;
+    padding: 8px;
     text-decoration: none;
     color: #fff;
     border-radius: 5px;
@@ -48,9 +39,8 @@ form label {
     transition-property: box-shadow, transform;
 }
 
-.addbtn:hover, .addbtn:focus, .addbtn:active {
+.btn:hover, .btn:focus, .btn:active {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
-

@@ -25,7 +25,7 @@ function AddIssue() {
                     <option value="Extra-High">Extra-High</option>
                 </select>
             </label>
-              <button type="submit">Add</button>
+              <button class="addbtn" type="submit">Add</button>
         </form> 
     </div>
     </div>
