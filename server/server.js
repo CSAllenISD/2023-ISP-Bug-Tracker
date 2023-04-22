@@ -4,20 +4,14 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = process.env.DATABASE_URI;  
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-
-
-client.connect(err => {
-    const collection = client.db("test").collection("devices");
-    // perform actions on the collection object
-    client.close();
-});
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true})
+const db = mongoose.connection
+db.on('error', console.error.bind(console, "connection error: "));
+db.once('open', () => console.log("connected to db"))
 
 app.use(express.json())
 
-const assigneesRouter = require('./routes/assignees.js')
+const assigneesRouter = require('./routes/assignees')
 app.use('/assignees', assigneesRouter)
 
 app.listen(5000, () => {console.log("Server started")})
