@@ -27,8 +27,8 @@ router.post('/', async (req, res) => {
         const newAssignee = await assignee.save()
         res.status(201).json(newAssignee)
     } catch (err) {
-        if (subscriber == undefined) {
-            return res.status(404).json({ message: "Cannot find subscriber" })
+        if (assignee == undefined) {
+            return res.status(404).json({ message: "Cannot find assignee" })
         }
         res.status(400).json({message: err.message})
 
