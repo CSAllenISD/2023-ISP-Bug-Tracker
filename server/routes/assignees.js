@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
 
 //GET one
 router.get('/:id', getAssignee, (req, res) => {
-    res.send(req.subscriber.name)
+    res.json(res.assignee)
 })
 
 //POST one
@@ -35,17 +35,27 @@ router.post('/', async (req, res) => {
     }
 })
 
-// router.delete('/:id', (req, res) => {
-// })
+//Del one
+router.delete('/:id', getAssignee, async (req, res) => {
+    try {
+        await res.assignee.deleteOne()
+        res.json({message: "Successfully Deleted"})
+    } catch(err) {
+        res.status(500).json({message: err.message})
+    }
+})
 
 async function getAssignee(req, res, next) {
     let assignee
     try {
         assignee = await Assignee.findById(req.params.id)
-        if (subscriber == null) {
+        if (assignee == null) {
             return res.status(404).json({message: "Cannot find assignee"})
         }
     } catch(err) {
+        if (assignee == null) {
+            return res.status(404).json({message: "Cannot find assignee"})
+        }
         return res.status(500).json({ message: err.message })
     }
 

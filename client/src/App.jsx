@@ -13,6 +13,7 @@ function App() {
 
   function showCurrentIssue() {
     setAddIssue(true);
+    console.log(issues)
   }
 
   return (

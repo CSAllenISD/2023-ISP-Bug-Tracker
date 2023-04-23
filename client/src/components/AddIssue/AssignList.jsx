@@ -5,7 +5,7 @@ export default function AssignList({assignees}) {
   if (assignees != null){
     return(
       assignees.map(assigned => {
-        return <Assign key={assigned.id} assingees={assigned} /> 
+        return <Assign key={assigned._id} assingees={assigned} /> 
       })
     )
   }

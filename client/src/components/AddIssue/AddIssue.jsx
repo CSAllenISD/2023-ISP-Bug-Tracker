@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import AssignList from "./AssignList";
 import "./AddIssue.css"
+import axios from "axios"
 
 const { uuid4 } = require('uuid4');
 
@@ -17,15 +18,17 @@ function AddIssuePage({setIssues}) {
     const [backendData, setBackendData] = useState([{}])
 
     useEffect(() => {
-        fetch("/api").then(
-            response => response.json()
-        ).then(
-            data => {
-                setBackendData(data)
-            }
-        )
-    }, []) //TODO check docs for what empty arr does
+        axios.get('/assignees')
+          .then(response => {
+            setBackendData(response.data);
+          })
+          .catch(error => {
+            console.error(error);
+          });
+      }, []);
+       //TODO check docs for what empty arr does
     
+    // console.log(backendData)
     
     var priority = 'low';
     var assign = assignees[0].name; 
@@ -77,11 +80,11 @@ function AddIssuePage({setIssues}) {
             <label>Description<input ref={issueNameRef} type="text" placeholder="Description of the Issue..."/></label>
             <label>Assign To
                 <select name="forDev" id="forDev" ref={assignRef} onChange={updateAssign}> 
-                    {(typeof backendData.assignees === 'undefined') ? (
+                    {(typeof backendData === 'undefined') ? (
                         <AssignList assignees={[{name: "Loading...", id: null }]} />
 
                     ): (
-                        <AssignList assignees={backendData.assignees} />
+                        <AssignList assignees={backendData} />
                     )}
                 </select>
                     <input type="text" name="" id="new-person" ref={newAssignRef} placeholder="New assignee name"/>
