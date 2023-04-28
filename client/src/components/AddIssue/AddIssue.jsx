@@ -19,7 +19,7 @@ function AddIssue() {
             </label>
             <label>Priority
                 <select name="priority" id="priority">
-                    <option value="low">low</option>
+                    <option value="Low">Low</option>
                     <option value="Medium">Medium</option>
                     <option value="High">High</option>
                     <option value="Extra-High">Extra-High</option>
