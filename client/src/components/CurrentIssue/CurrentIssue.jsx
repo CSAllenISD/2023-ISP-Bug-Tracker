@@ -62,11 +62,11 @@ function CurrentIssue() {
   return (
     <div className="App">
       <h1>Current Issues</h1>
-      <select value={sortType} onChange={handleSortChange}>
+      <select class="sort-choice" value={sortType} onChange={handleSortChange}>
         <option value="default">Sort by Priority</option>
         <option value="priority-desc">Sort by Priority (Descending)</option>
       </select>
-      <button onClick={sortIssues}>Sort</button>
+      <button onClick={sortIssues} className="sort-issue" >Sort</button>
       <div className="grey-card-container">
         <div className="current-issues">
           {issues.map((issue, index) => (
