@@ -18,6 +18,7 @@ h1 {
 }
 
 .grey-card-container {
+  min-height: 430px;
   max-width: 725px;
   margin: auto;
   background: #F6F6F6;
