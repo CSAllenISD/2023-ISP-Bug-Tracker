@@ -3,19 +3,29 @@ import AssignList from "./AssignList";
 import "./AddIssue.css"
 import axios from "axios"
 
+
 const { uuid4 } = require('uuid4');
+
 
 function AddIssuePage({setIssues}) {
 
+
     const issueNameRef = useRef()
-    const priorityRef = useRef()
     const assignRef = useRef()
     const newAssignRef = useRef()
 
-    //john and sara are for testing, remove in final build
-    const [assignees, setAssign ] = useState([{name: "John", id: 1 }, {name: "Sara", id: 2}])
+
+    const [assignees, setAssign ] = useState([{}])
+
+
+    const [assigneeToBeAdded, SetAssigneeToBeAdded] = useState("")
+
 
     const [backendData, setBackendData] = useState([{}])
+
+
+    const [priority, setPriority] = useState("Low")
+
 
     useEffect(() => {
         axios.get('/assignees')
@@ -27,81 +37,130 @@ function AddIssuePage({setIssues}) {
           });
       }, []);
        //TODO check docs for what empty arr does
-    
+   
     // console.log(backendData)
-    
-    var priority = 'low';
-    var assign = assignees[0].name; 
-    
+   
+    var assign = assignees[0].name;
+   
     {(typeof backendData.assignees === 'undefined') ? (
         <p>Loading...</p>
     ): (
         console.log(backendData.assignees[0].name)
     )}
-    
-    function updatePriority(e) {  priority = priorityRef.current.value }
+     
 
-    function updateAssign(e) {  assign = assignRef.current.value  }
- 
 
     function handleAddTodo(e) {
         e.preventDefault()
 
+
         const name = issueNameRef.current.value
 
-        if (name === '') return 
+
+        if (name === '') return
         setIssues(prevIssues => {
             // console.log(...prevIssues, {id: 1, name: name, priority: priority, assign: assign } )
             return [...prevIssues, {id: uuid4(), name: name, priority: priority, assign: assign }]
         })
         issueNameRef.current.value = null
 
+
     }
 
-    function handleAddAssignee(e){
+
+    // function handleAddAssignee(e){
+    //     e.preventDefault()
+
+
+    //     const name = newAssignRef.current.value
+       
+    //     if (name === '') return
+    //     const postData = {
+    //         name: name,
+    //       };
+
+
+    //     axios.post('/assignees', postData)
+    //         .then(response => {
+    //             console.log(response);
+    //         })
+    //         .catch(error => {
+    //             console.error(error);
+    //         });
+
+
+    //     newAssignRef.current.value = null
+    // }
+
+
+    const handleAddAssignee = (e) => {
         e.preventDefault()
-
-        const name = newAssignRef.current.value
-        
+       
+        const name = assigneeToBeAdded
+       
         if (name === '') return
-        setAssign((prevAssign) => {
-            // TODO: hardcoded id idk if it even needs id 
-            // console.log(...prevAssign, {id: 2, name: name})
-            return[...prevAssign, {id: 2, name: name}]
-        })
+        const postData = {
+            name: name,
+          };
 
-        newAssignRef.current.value = null
+
+        axios.post('/assignees', postData)
+            .then(response => {
+                console.log(response);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+
+
+
 
     }
+
 
   return (
     <div className="add-issue">
         <form>
-            <label>Description<input ref={issueNameRef} type="text" placeholder="Description of the Issue..."/></label>
-            <label>Assign To
-                <select name="forDev" id="forDev" ref={assignRef} onChange={updateAssign}> 
-                    {(typeof backendData === 'undefined') ? (
-                        <AssignList assignees={[{name: "Loading...", id: null }]} />
-
-                    ): (
+            {/* Description */}
+            <form>
+                <label>Description<input ref={issueNameRef} type="text" placeholder="Description of the Issue..."/></label>
+            </form>
+            {/* Assign */}
+            <form>
+                <label>Assign To
+                    <select name="forDev" id="forDev" value={assign} onChange={(e) => setAssign(e.target.value)}>
+                        {
+                        // TODO loading not working https://www.youtube.com/watch?v=EcRFYF4B3IQ
                         <AssignList assignees={backendData} />
-                    )}
-                </select>
-                    <input type="text" name="" id="new-person" ref={newAssignRef} placeholder="New assignee name"/>
-                    <button value="Add" className="add" onClick={handleAddAssignee}>+ New Person</button>
-            </label>
-            <label>Priority
-                <select name="priority" id="priority" ref={priorityRef} onChange={updatePriority} >
-                    <option value="low">low</option>
-                    <option value="Medium">Medium</option>
-                    <option value="High">High</option>
-                    <option value="Extra-High">Extra-High</option>
-                </select>
-            </label>
+                        }
+                    </select>
+                   
+                    {/* add assign */}
+                    <form onSubmit={handleAddAssignee}>
+                        <input type="text" name="" id="new-person" placeholder="New assignee name" value={assigneeToBeAdded} onChange={(e) => SetAssigneeToBeAdded(e.target.value)}/>
+                        <button value="Add" className="add">+ New Person</button>
+                    </form>
+                </label>
+            </form>
+            {/* Priority */}
+            <form>
+                <label>Priority
+                    <select name="priority" id="priority" value={priority} onChange={(e) => setPriority(e.target.value)} >
+                        <option value="Low">low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                        <option value="Extra-High">Extra-High</option>
+                    </select>
+                </label>
+            </form>
               <button onClick={handleAddTodo} type="submit">Add</button>
-        </form> 
+        </form>
     </div>
   );
 }
 
+
 export default AddIssuePage;
+
+
+
