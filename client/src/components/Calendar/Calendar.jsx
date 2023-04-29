@@ -9,6 +9,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./Calendar.css";
 
+
 const locales = {
     "en-US": require("date-fns/locale/en-US"),
 };
@@ -82,7 +83,7 @@ function Calendar_() {
                 <input type="text" placeholder="Add Title" value={newEvent.title} onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })} />
                 <DatePicker placeholderText="Start Date"  selected={newEvent.start} onChange={(start) => setNewEvent({ ...newEvent, start })} />
                 <DatePicker placeholderText="End Date" selected={newEvent.end} onChange={(end) => setNewEvent({ ...newEvent, end })} />
-                <button class="btn" onClick={handleAddEvent}>Add Event</button>
+                <button class="btn" onClick={handleAddEvent}>Add Event</button>             
             </div>
             <Calendar localizer={localizer} defaultDate={new Date()} defaultView="month" events={allEvents} 
             startAccessor="start" endAccessor="end" style={{ height: 500, margin: "50px" }} />

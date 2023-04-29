@@ -27,13 +27,3 @@ Rafid Ahmed - https://www.codermerlin.com/users/rafid-ahmed/Digital%20Portfolio/
 Aidan Valva - https://www.codermerlin.com/users/aidan-valva/Digital%20Portfolio/index.html
 
 Brook Asnake - https://www.codermerlin.com/users/brook-asnake/Digital%20Portfolio/index.html
-
-## Gantt Chart
-
-Link: https://docs.google.com/spreadsheets/d/1cvaCJ1v1KQsb4dFzjlJqO6XGIJ8MkNUVDH8Womn-AFk/edit#gid=1688732048
-![gantt chart](https://raw.githubusercontent.com/CSAllenISD/2023-ISP-Bug-Tracker/main/Gantt%20Chart.PNG)
-
-## Advertisement
-![Bug-Tracker](https://user-images.githubusercontent.com/70545345/219811792-9039138b-5222-411d-ae9a-4b494d2c41a7.png)
-
-

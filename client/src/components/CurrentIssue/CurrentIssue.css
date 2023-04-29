@@ -29,72 +29,6 @@
     right: 0;
     color: #959595;
     margin-top: 0;
-    border: none;
-    font-size: 14px;
-    background: #007AE6;
-    width: 90px;
-    padding: 5px;
-    text-decoration: none;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-property: box-shadow, transform;
-    transition-property: box-shadow, transform;
-}
-
-.close-issue:hover, .close-issue:focus, .close-issue:active {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-}
-
-.sort-issue {
-    border: none;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: 5px;
-    font-size: 16px;
-    background: #007AE6;
-    width: 60px;
-    height: 40px;
-    padding: 10px;
-    text-decoration: none;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-property: box-shadow, transform;
-    transition-property: box-shadow, transform;
-}
-
-.sort-issue:hover, .sort-issue:focus, .sort-issue:active {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-}
-
-.sort-choice {
-    text-align: center;
-    width: 30%;
-    padding: 10px;
-    border: 2px solid rgba(255,255,255,0.25);
-    border-radius: 4px;
-    margin: 3px 0;
-    border-radius: 5px;
-    outline: none;
-    color: black;
-    font-size: 1em;
-    transition: .3s;
-}
-
-.sort-choice:focus {
-    border-color: dodgerblue;
-    box-shadow: 0 0 8px 0 dodgerblue;
 }
 
 .current-issues hr {
@@ -121,5 +55,3 @@
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
     background-color: #5E5E5E;
 }
-
-
