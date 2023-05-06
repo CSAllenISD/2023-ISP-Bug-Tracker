@@ -1,6 +1,6 @@
 import React from "react";
 import BannerBackground from "../../Assets/about-background.png";
-import BannerImage from "../../Assets/addisue.png";
+import BannerImage from "../../Assets/addIssue.png";
 import About from "./About";
 import Work from "./Work";
 
