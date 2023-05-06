@@ -1,9 +1,19 @@
 const mongoose = require('mongoose')
 
-//{name: "John", id: 1}
+//{id: uuid4(), name: name, priority: priority, assign: assign }
 
 const assigneeSchema = new mongoose.Schema({
     name: {
+        type: String,
+        required: true
+    },
+
+    priority: {
+        type: String,
+        required: true
+    },
+
+    assign: {
         type: String,
         required: true
     }

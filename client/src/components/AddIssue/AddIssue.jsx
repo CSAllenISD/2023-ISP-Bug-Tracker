@@ -42,11 +42,11 @@ function AddIssuePage({setIssues}) {
    
     var assign = assignees[0].name;
    
-    {(typeof backendData.assignees === 'undefined') ? (
-        <p>Loading...</p>
-    ): (
-        console.log(backendData.assignees[0].name)
-    )}
+    // {(typeof backendData.assignees === 'undefined') ? (
+    //     <p>Loading...</p>
+    // ): (
+    //     console.log(backendData.assignees[0].name)
+    // )}
      
 
 
@@ -64,17 +64,21 @@ function AddIssuePage({setIssues}) {
         })
         issueNameRef.current.value = null
 
+        console.log('test')
+
 
     }
 
+    
+    
 
-    // function handleAddAssignee(e){
+
+    // const handleAddAssignee = (e) => {
     //     e.preventDefault()
-
-
-    //     const name = newAssignRef.current.value
        
-    //     if (name === '') return
+    //     const name = assigneeToBeAdded
+       
+    //     // if (name === '') return
     //     const postData = {
     //         name: name,
     //       };
@@ -89,14 +93,15 @@ function AddIssuePage({setIssues}) {
     //         });
 
 
-    //     newAssignRef.current.value = null
+
+
     // }
 
-
-    const handleAddAssignee = (e) => {
+    function handleAddAssignee(e){
         e.preventDefault()
-       
-        const name = assigneeToBeAdded
+
+
+        const name = newAssignRef.current.value
        
         if (name === '') return
         const postData = {
@@ -113,8 +118,7 @@ function AddIssuePage({setIssues}) {
             });
 
 
-
-
+        newAssignRef.current.value = null
     }
 
 
@@ -122,28 +126,25 @@ function AddIssuePage({setIssues}) {
     <div className="add-issue">
         <form>
             {/* Description */}
-            <form>
+
                 <label>Description<input ref={issueNameRef} type="text" placeholder="Description of the Issue..."/></label>
-            </form>
+                
             {/* Assign */}
-            <form>
+            
                 <label>Assign To
-                    <select name="forDev" id="forDev" value={assign} onChange={(e) => setAssign(e.target.value)}>
+                    <select name="forDev" id="forDev" value={assigneeToBeAdded} onChange={(e) => setAssign(e.target.value)}>
                         {
-                        // TODO loading not working https://www.youtube.com/watch?v=EcRFYF4B3IQ
                         <AssignList assignees={backendData} />
                         }
                     </select>
                    
                     {/* add assign */}
-                    <form onSubmit={handleAddAssignee}>
-                        <input type="text" name="" id="new-person" placeholder="New assignee name" value={assigneeToBeAdded} onChange={(e) => SetAssigneeToBeAdded(e.target.value)}/>
-                        <button value="Add" className="add">+ New Person</button>
-                    </form>
+                    <input type="text" name="" id="new-person" ref={newAssignRef} placeholder="New assignee name"/>
+                    <button value="Add" className="add" onClick={handleAddAssignee}>+ New Person</button>
                 </label>
-            </form>
+            
             {/* Priority */}
-            <form>
+            
                 <label>Priority
                     <select name="priority" id="priority" value={priority} onChange={(e) => setPriority(e.target.value)} >
                         <option value="Low">low</option>
@@ -152,8 +153,9 @@ function AddIssuePage({setIssues}) {
                         <option value="Extra-High">Extra-High</option>
                     </select>
                 </label>
-            </form>
+            
               <button onClick={handleAddTodo} type="submit">Add</button>
+              <p>debugging: {assigneeToBeAdded}</p>
         </form>
     </div>
   );
