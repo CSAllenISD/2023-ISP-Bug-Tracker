@@ -158,7 +158,7 @@ function AddIssuePage({setIssues}) {
                 </label>
             
               <button onClick={handleAddTodo} type="submit">Add</button>
-              <p>debugging: {assigneeToBeAdded}</p>
+              {/* <p>debugging: {assigneeToBeAdded}</p> */}
         </form>
     </div>
   );
