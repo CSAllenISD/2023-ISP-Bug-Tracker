@@ -149,7 +149,7 @@ function AddIssuePage({setIssues}) {
             {/* Priority */}
             
                 <label>Priority
-                    <select name="priority" id="priority" value={priority} onChange={(e) => setPriority(e.target.value)} >
+                    <select name="priority" id="priority" ref={priorityRef} onChange={updatePriority}>
                         <option value="Low">low</option>
                         <option value="Medium">Medium</option>
                         <option value="High">High</option>
