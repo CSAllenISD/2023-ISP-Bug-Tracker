@@ -11,9 +11,9 @@ function AddIssuePage({setIssues}) {
 
 
     const issueNameRef = useRef()
+    const priorityRef = useRef()
     const assignRef = useRef()
     const newAssignRef = useRef()
-
 
     const [assignees, setAssign ] = useState([{}])
 
@@ -26,7 +26,10 @@ function AddIssuePage({setIssues}) {
 
     const [priority, setPriority] = useState("Low")
 
+    function updatePriority(e) {  priority = priorityRef.current.value }
 
+    function updateAssign(e) {  assign = assignRef.current.value  }
+    
     useEffect(() => {
         axios.get('/assignees')
           .then(response => {
@@ -64,7 +67,7 @@ function AddIssuePage({setIssues}) {
         })
         issueNameRef.current.value = null
 
-        console.log('test')
+        // console.log('todo added')
 
 
     }
@@ -98,7 +101,7 @@ function AddIssuePage({setIssues}) {
     // }
 
     function handleAddAssignee(e){
-        e.preventDefault()
+        // e.preventDefault()
 
 
         const name = newAssignRef.current.value
@@ -132,7 +135,7 @@ function AddIssuePage({setIssues}) {
             {/* Assign */}
             
                 <label>Assign To
-                    <select name="forDev" id="forDev" value={assigneeToBeAdded} onChange={(e) => setAssign(e.target.value)}>
+                    <select name="forDev" id="forDev" ref={assignRef} onChange={updateAssign}>
                         {
                         <AssignList assignees={backendData} />
                         }
@@ -163,6 +166,3 @@ function AddIssuePage({setIssues}) {
 
 
 export default AddIssuePage;
-
-
-
